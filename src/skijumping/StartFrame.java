@@ -34,7 +34,7 @@ public class StartFrame extends AppJFrame{
         Borganizator.addActionListener(e -> {
             LogFrame t2 = new LogFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("logFrame");
+                //System.out.println("logFrame");
             });
         });
         layerTwo.add(Borganizator);
@@ -43,7 +43,7 @@ public class StartFrame extends AppJFrame{
         Bkibic.addActionListener(e -> {
             WatchResultsFrame t3 = new WatchResultsFrame();
             this.startSubframe(t3, e1 -> {
-                System.out.println("watchResultsFrame");
+                //System.out.println("watchResultsFrame");
             });
         });
         layerTwo.add(Bkibic);

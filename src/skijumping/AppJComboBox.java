@@ -43,7 +43,7 @@ public class AppJComboBox {
                 descriptionList.add(rs.getString(2));
             }
             component = new JComboBox<>(descriptionList.toArray());
-            System.out.println("OK");
+            //System.out.println("OK");
             component.repaint();
             rs.close();
         } catch (SQLException e) {

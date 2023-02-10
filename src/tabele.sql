@@ -56,7 +56,8 @@ CREATE TABLE Zgloszenie (
 	id_zaw INTEGER NOT NULL REFERENCES Zawodnik,
 	id_kon INTEGER NOT NULL REFERENCES Konkurs,
 	wynik_zaw DECIMAL,
-	miejsce_zaw INTEGER
+	miejsce_zaw INTEGER,
+	UNIQUE(id_zaw, id_kon)
 );
 
 DROP TABLE IF EXISTS Wynik CASCADE;

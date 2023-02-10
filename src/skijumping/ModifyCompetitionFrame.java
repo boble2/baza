@@ -23,7 +23,7 @@ public class ModifyCompetitionFrame extends AppJFrame{
 
             rs.next();
             String result = rs.getString(1);
-            System.out.println(result);
+            //System.out.println(result);
             if (!result.equals("f")){
                 select = "INSERT INTO SERIA (id_kon, numer) VALUES ( " + idcomp + " ,0);";
                 statement.executeUpdate(select);
@@ -37,12 +37,12 @@ public class ModifyCompetitionFrame extends AppJFrame{
             select = "UPDATE KONKURS SET status = 2 WHERE id_kon = " + idcomp + ";";
             statement.executeUpdate(select);
             statement.close();
-            System.out.println("OK");
+            //System.out.println("OK");
         }
         catch (Exception e){
             ErrorFrame t2 = new ErrorFrame(e.toString());
             startSubframe(t2, e2 -> {
-                System.out.println("error");
+                //System.out.println("error");
             });
             return;
             //throw new RuntimeException(e);
@@ -68,7 +68,7 @@ public class ModifyCompetitionFrame extends AppJFrame{
         BAddRep.addActionListener(e -> {
             AddReprezentationToCompetitionFrame t2 = new AddReprezentationToCompetitionFrame(idcomp, place);
             this.startSubframe(t2, e1 -> {
-                System.out.println("organizer action");
+                //System.out.println("organizer action");
                 tableRep.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();
@@ -95,7 +95,7 @@ public class ModifyCompetitionFrame extends AppJFrame{
         BAddCom.addActionListener(e -> {
             AddCompetitorToCompetitionFrame t2 = new AddCompetitorToCompetitionFrame(idcomp, place);
             this.startSubframe(t2, e1 -> {
-                System.out.println("logFrame");
+                //System.out.println("logFrame");
                 tableCom.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();

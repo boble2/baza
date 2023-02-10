@@ -22,7 +22,7 @@ public class CompetitorListFrame extends AppJFrame{
         BAdd.addActionListener(e -> {
             CompetitorAddFrame t2 = new CompetitorAddFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("organizer action");
+                //System.out.println("organizer action");
                 table.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();

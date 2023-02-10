@@ -15,7 +15,7 @@ public class WatchResultsFrame extends AppJFrame{
         CompetitorSel.addActionListener(e -> {
             SelectCompetitorFrame t2 = new SelectCompetitorFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("replist");
+                //System.out.println("replist");
             });
         });
         jPanel.add(CompetitorSel);
@@ -24,7 +24,7 @@ public class WatchResultsFrame extends AppJFrame{
         CompetitionSel.addActionListener(e -> {
             SelectCompetitionFrame t2 = new SelectCompetitionFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("addcom");
+                //System.out.println("addcom");
             });
         });
         jPanel.add(CompetitionSel);

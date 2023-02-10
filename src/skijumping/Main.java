@@ -14,10 +14,10 @@ public class Main {
         try {
             Class.forName("org.postgresql.Driver");
             connection = DriverManager
-                    .getConnection("jdbc:postgresql://localhost/postgres", username, password);
+                    .getConnection("jdbc:postgresql://localhost/skijumping", username, password);
         } catch (SQLException e) {
             e.printStackTrace();
-            System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            //System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
         StartFrame startFrame = new StartFrame();

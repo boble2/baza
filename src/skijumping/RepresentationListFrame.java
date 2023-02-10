@@ -23,7 +23,7 @@ public class RepresentationListFrame extends AppJFrame{
         BAdd.addActionListener(e -> {
             RepresentationAddFrame t2 = new RepresentationAddFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("organizer action");
+                //System.out.println("organizer action");
                 table.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();

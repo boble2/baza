@@ -29,7 +29,7 @@ public class LogFrame extends AppJFrame{
             else{
                 OrganizerActionFrame t2 = new OrganizerActionFrame();
                 this.startSubframe(t2, e1 -> {
-                    System.out.println("organizer action");
+                    //System.out.println("organizer action");
                 });
             }
 

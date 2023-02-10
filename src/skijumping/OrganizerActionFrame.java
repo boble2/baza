@@ -14,7 +14,7 @@ public class OrganizerActionFrame extends AppJFrame{
         AddRep.addActionListener(e -> {
             RepresentationListFrame t2 = new RepresentationListFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("replist");
+                //System.out.println("replist");
             });
         });
         jPanel.add(AddRep);
@@ -23,7 +23,7 @@ public class OrganizerActionFrame extends AppJFrame{
         AddCom.addActionListener(e -> {
             CompetitorListFrame t2 = new CompetitorListFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("addcom");
+                //System.out.println("addcom");
             });
         });
         jPanel.add(AddCom);
@@ -32,7 +32,7 @@ public class OrganizerActionFrame extends AppJFrame{
         AddCompetition.addActionListener(e -> {
             CompetitionListFrame t2 = new CompetitionListFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("addcom2");
+                //System.out.println("addcom2");
             });
         });
         jPanel.add(AddCompetition);

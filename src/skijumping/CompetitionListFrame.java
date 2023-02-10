@@ -41,7 +41,7 @@ public class CompetitionListFrame extends AppJFrame{
         BAdd.addActionListener(e -> {
             CompetitionAddFrame t2 = new CompetitionAddFrame();
             this.startSubframe(t2, e1 -> {
-                System.out.println("organizer action");
+                //System.out.println("organizer action");
                 table.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();
@@ -57,7 +57,7 @@ public class CompetitionListFrame extends AppJFrame{
         selectionModel.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                System.out.println(table.getComponent().getSelectedRow());
+                //System.out.println(table.getComponent().getSelectedRow());
                 String status = table.getValues().get(table.getComponent().getSelectedRow()).get(5);
                 disableButtons();
                 if (status.equals("1")){
@@ -85,7 +85,7 @@ public class CompetitionListFrame extends AppJFrame{
             String place = table.getValues().get(table.getComponent().getSelectedRow()).get(1);
             ModifyCompetitionFrame t2 = new ModifyCompetitionFrame(id, place);
             this.startSubframe(t2, e1 -> {
-                System.out.println("organizer action");
+                //System.out.println("organizer action");
                 table.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();
@@ -102,7 +102,7 @@ public class CompetitionListFrame extends AppJFrame{
                 return;
             }
             String id = table.getValues().get(table.getComponent().getSelectedRow()).get(4);
-            System.out.println("id " + id);
+            //System.out.println("id " + id);
             addResults(id, table);
             //String place = table.getValues().get(table.getComponent().getSelectedRow()).get(1);
 
@@ -121,7 +121,7 @@ public class CompetitionListFrame extends AppJFrame{
                     " dnia " + table.getValues().get(table.getComponent().getSelectedRow()).get(0);
             WatchCompetitionResultsFrame t2 = new WatchCompetitionResultsFrame(id, name);
             this.startSubframe(t2, e1 -> {
-                System.out.println("organizer action");
+                //System.out.println("organizer action");
                 table.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();
@@ -149,8 +149,8 @@ public class CompetitionListFrame extends AppJFrame{
                 rs.next();
                 id_serii = rs.getString(1);
                 statement.close();
-                System.out.println("idkon "+ id_kon);
-                System.out.println("idserii" + id_serii);
+                //System.out.println("idkon "+ id_kon);
+                //System.out.println("idserii" + id_serii);
                 if (id_serii == null) {
 
                     endCompetition(id_kon);
@@ -179,7 +179,7 @@ public class CompetitionListFrame extends AppJFrame{
             }catch (Exception e){
                 ErrorFrame t2 = new ErrorFrame(e.toString());
                 startSubframe(t2, e2 -> {
-                    System.out.println("error");
+                    //System.out.println("error");
                 });
                 return;
                 //throw new RuntimeException(e);
@@ -187,7 +187,7 @@ public class CompetitionListFrame extends AppJFrame{
 
             ResultAddFrame t2 = new ResultAddFrame(id_kon, id_serii, id_zgl, dane);
             this.startSubframe(t2, e1 -> {
-                System.out.println("organizer action");
+                //System.out.println("organizer action");
                 table.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();
@@ -199,14 +199,14 @@ public class CompetitionListFrame extends AppJFrame{
     }
     void endCompetition(String id_kon){
 
-        System.out.println("End competition" + id_kon);
+        //System.out.println("End competition" + id_kon);
         ArrayList<String> columnNames = new ArrayList<>();
         columnNames.add("id_zaw");
         columnNames.add("id_kon");
         columnNames.add("suma");
         String select = "select id_zaw, id_kon, sum(punkty) from wynik natural join zgloszenie natural join seria where numer <> 0 and id_kon = "
                 + id_kon +" group by id_zaw, id_kon order by sum(punkty) desc;";
-        System.out.println(select);
+        //System.out.println(select);
         //AppJTableFromSelect table = new AppJTableFromSelect(select, columnNames, c);
         try {
             Statement statement = c.createStatement();
@@ -218,7 +218,7 @@ public class CompetitionListFrame extends AppJFrame{
                 String points = rs.getString(3);
                 Statement statement2 = c.createStatement();
                 String update = "UPDATE zgloszenie SET wynik_zaw = " + points + ", miejsce_zaw = " + position + " where id_zaw = "+ id_zaw + " AND id_kon = " + id_kon + ";";
-                System.out.println(update);
+                //System.out.println(update);
                 statement2.executeUpdate(update);
                 statement2.close();
                 position++;
@@ -226,14 +226,14 @@ public class CompetitionListFrame extends AppJFrame{
             statement.close();
             Statement statement3 = c.createStatement();
             String update = "UPDATE konkurs SET status = 3 where id_kon = " + id_kon + ";";
-            System.out.println(update);
+            //System.out.println(update);
             statement3.executeUpdate(update);
             statement3.close();
 
         } catch (SQLException e) {
             ErrorFrame t2 = new ErrorFrame(e.toString());
             startSubframe(t2, e2 -> {
-                System.out.println("error");
+                //System.out.println("error");
             });
             return;
             //throw new RuntimeException(e);

@@ -183,13 +183,3 @@ public class SkiJumping{
 		
 	}*/
 }
-
-/*
-Do zrobienia:
-- przejrzec kod i pousuwac niepotrzebne c.close()
-- frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); zamyka cala aplikacje przy zamknieciu okienka
-- jakos w bazie danych zapisac stan konkursow
-- okienko wyswietlajace cala tabele - przyda sie w kibicu i przy dodawaniu po id
-- mozna tez jakos inaczej zrobic przy dodawaniu
-- obsluga bledow sql - mozna okienka z info o bledzie
- */

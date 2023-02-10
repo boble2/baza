@@ -51,7 +51,7 @@ public class AppJTableFromSelect {
                 }
                 values.add(row);
             }
-            System.out.println("OK");
+            //System.out.println("OK");
             component.repaint();
             rs.close();
         } catch (SQLException e) {

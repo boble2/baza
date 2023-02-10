@@ -64,7 +64,7 @@ public class AppJFrameAddToBase extends AppJFrame{
                         } catch (SQLException e) {
                             ErrorFrame t2 = new ErrorFrame(e.toString());
                             startSubframe(t2, e2 -> {
-                                System.out.println("error");
+                                //System.out.println("error");
                             });
                             return;
                         }
@@ -132,17 +132,17 @@ public class AppJFrameAddToBase extends AppJFrame{
                             sql.append(pom);
                         }
 
-                        System.out.println(sql);
+                        //System.out.println(sql);
                         stmt.executeUpdate(sql.toString());
                         stmt.close();
                         dispatchEvent(new WindowEvent(me, WindowEvent.WINDOW_CLOSING));
                         //c.close();
                     } catch (Exception e1) {
                         e1.printStackTrace();
-                        System.err.println(e1.getClass().getName()+": "+e1.getMessage());
+                        //System.err.println(e1.getClass().getName()+": "+e1.getMessage());
                         ErrorFrame t2 = new ErrorFrame(e1.toString());
                         startSubframe(t2, e2 -> {
-                            System.out.println("error");
+                            //System.out.println("error");
                         });
                         return;
                         //System.exit(0);

@@ -44,7 +44,7 @@ public class SelectCompetitionFrame extends AppJFrame{
             //String place = table.getValues().get(table.getComponent().getSelectedRow()).get(1);
             WatchCompetitionResultsFrame t2 = new WatchCompetitionResultsFrame(id, name);
             this.startSubframe(t2, e1 -> {
-                System.out.println("organizer action");
+                //System.out.println("organizer action");
                 table.refreshData();
                 SwingUtilities.updateComponentTreeUI(me);
                 me.invalidate();
